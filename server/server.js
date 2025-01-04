@@ -1,13 +1,10 @@
 const express = require('express');
 const app = express();
+const router = require('./router/auth-router');
 
-app.get('/', (req, res) => {
-    res.status(200).send("Welcome to world.");
-});
+app.use("/api/auth", router);
+// app.use("/api/register", router);
 
-app.get('/register', (req, res) => {
-    res.status(200).send("Welcome to Register page.");
-});
 
 const PORT = 5000;
 app.listen(PORT, () => {
